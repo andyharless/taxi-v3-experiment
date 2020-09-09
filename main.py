@@ -27,6 +27,8 @@ best_avg_rewards = []
 local_seed = 80
 start = 3
 
+print("\n\nBegin Taxi-v3 learning...")
+
 # Multiple sample runs (but in this case only the best one)
 for i in range(start, start+nruns):
     
@@ -41,7 +43,7 @@ for i in range(start, start+nruns):
     
     # Run the learning problem
     agent = Agent(alpha=alpha, gamma=gamma, get_epsilon=epfunc)
-    avg_rewards, best_avg_reward = interact(env, agent, n_episodes)
+    avg_rewards, best_avg_reward = interact(env, agent, n_episodes, show_progress=10000)
     best_avg_rewards.append(best_avg_reward)
     
     # Monitor results after each run

@@ -12,7 +12,7 @@ def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
     - agent: instance of class Agent (see Agent.py for details)
     - num_episodes: number of episodes of agent-environment interaction
     - window: number of episodes to consider when calculating average rewards
-    - show_progress: whether to show progress during episode
+    - show_progress: whether to show progress during run and how often
 
     Returns
     =======
@@ -54,7 +54,7 @@ def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
             # update best average reward
             if avg_reward > best_avg_reward:
                 best_avg_reward = avg_reward
-        if show_progress:
+        if show_progress and not i_episode % show_progress:
             print("\rEpisode {}/{} || Best average reward {}".format(i_episode, num_episodes,
                                                                      best_avg_reward), end="")
         sys.stdout.flush()
