@@ -13,8 +13,3 @@ cd openai-gym-taxi-v3-udacity
 chmod u+x taxi.sh
 ./taxi.sh
 ```
-
-It should produce a score (best average reward of 100) of 9.12
-
-Of course, I cheated by using a good seed.  If you don't cheat, the typical score is more like 9.0
-
