@@ -1,4 +1,4 @@
-# openai-gym-taxi-v3-udacity
+# taxi-v3-experiment
 
 ## Attempts to solve OpenAI Gym's Taxi-v3 RL environment
 
