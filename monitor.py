@@ -3,7 +3,7 @@ import sys
 import math
 import numpy as np
 
-def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
+def interact(env, agent, num_episodes=20000, window=100, show_progress=False, endline=""):
     """ Monitor agent's performance.
     
     Params
@@ -55,8 +55,8 @@ def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
             if avg_reward > best_avg_reward:
                 best_avg_reward = avg_reward
         if show_progress and not i_episode % show_progress:
-            print("\rEpisode {}/{} || Best average reward {}".format(i_episode, num_episodes,
-                                                                     best_avg_reward), end="")
+            print("\rEpisode {}/{} || epsilon={}, Best average reward {}".format(
+                 i_episode, num_episodes, agent.epsilon, best_avg_reward), end=endline)
         sys.stdout.flush()
         # check if task is solved (according to OpenAI Gym)
         if best_avg_reward >= 9.7:
